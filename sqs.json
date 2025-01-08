@@ -1,0 +1,43 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListSQS",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:ListQueues",
+                "sqs:ListQueueTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowCreateAndManageSQSQueues",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:CreateQueue",
+                "sqs:DeleteQueue",
+                "sqs:GetQueueAttributes",
+                "sqs:SetQueueAttributes",
+                "sqs:TagQueue",
+                "sqs:UntagQueue"
+            ],
+            "Resource": "arn:aws:sqs:eu-west-1:084828586425:*"
+        },
+        {
+            "Sid": "AllowSendMessage",
+            "Effect": "Allow",
+            "Action": "sqs:SendMessage",
+            "Resource": "arn:aws:sqs:eu-west-1:084828586425:*"
+        },
+        {
+            "Sid": "AllowReceiveAndDeleteMessage",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage",
+                "sqs:ChangeMessageVisibility"
+            ],
+            "Resource": "arn:aws:sqs:eu-west-1:084828586425:*"
+        }
+    ]
+}

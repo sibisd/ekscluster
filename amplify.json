@@ -1,0 +1,79 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+	  {
+		"Sid": "AmplifyAccess",
+		"Effect": "Allow",
+		"Action": [
+		  "amplify:GetBranch",
+		  "amplify:ListJobs",
+		  "amplify:UntagResource",
+		  "amplify:DeleteBranch",
+		  "amplify:StartDeployment",
+		  "amplify:CreateDeployment",
+		  "amplify:CreateBranch",
+		  "amplify:UpdateBranch",
+		  "amplify:CreateWebHook",
+		  "amplify:ListTagsForResource",
+		  "amplify:TagResource"
+		],
+		"Resource": "arn:aws:amplify:eu-west-1:084828586425:apps/*/branches/*"
+	  },
+	  {
+		"Sid": "AmplifyActions",
+		"Effect": "Allow",
+		"Action": [
+		  "amplify:DeleteDomainAssociation",
+		  "amplify:GetJob",
+		  "amplify:UntagResource",
+		  "amplify:DeleteWebHook",
+		  "amplify:UpdateWebHook",
+		  "amplify:UpdateDomainAssociation",
+		  "amplify:StartJob",
+		  "amplify:CreateDomainAssociation",
+		  "amplify:GetWebHook",
+		  "amplify:GetDomainAssociation",
+		  "amplify:DeleteJob",
+		  "amplify:ListTagsForResource",
+		  "amplify:TagResource",
+		  "amplify:StopJob"
+		],
+		"Resource": [
+		  "arn:aws:amplify:eu-west-1:084828586425:webhooks/*",
+		  "arn:aws:amplify:eu-west-1:084828586425:apps/*/branches/*/jobs/*",
+		  "arn:aws:amplify:eu-west-1:084828586425:apps/*/domains/*"
+		]
+	  },
+	  {
+		"Sid": "AmplifyPermissions",
+		"Effect": "Allow",
+		"Action": [
+		  "amplify:GetArtifactUrl",
+		  "amplify:UntagResource",
+		  "amplify:DeleteBackendEnvironment",
+		  "amplify:ListDomainAssociations",
+		  "amplify:ListBackendEnvironments",
+		  "amplify:GetBackendEnvironment",
+		  "amplify:DeleteApp",
+		  "amplify:ListWebHooks",
+		  "amplify:ListBranches",
+		  "amplify:CreateBackendEnvironment",
+		  "amplify:GenerateAccessLogs",
+		  "amplify:ListArtifacts",
+		  "amplify:CreateApp",
+		  "amplify:ListTagsForResource",
+		  "amplify:TagResource",
+		  "amplify:GetApp",
+		  "amplify:UpdateApp"
+		],
+		"Resource": "arn:aws:amplify:eu-west-1:084828586425:apps/*"
+	  },
+	  {
+		"Sid": "AmplifyList",
+		"Effect": "Allow",
+		"Action": "amplify:ListApps",
+		"Resource": "*"
+	  }
+	]
+  }
+  

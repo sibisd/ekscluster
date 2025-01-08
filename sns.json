@@ -1,0 +1,39 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListSNS",
+            "Effect": "Allow",
+            "Action": [
+                "sns:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowCreateAndManageSNSTopics",
+            "Effect": "Allow",
+            "Action": [
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:Subscribe",
+                "sns:Unsubscribe",
+                "sns:SetTopicAttributes",
+                "sns:GetTopicAttributes",
+                "sns:TagResource",
+                "sns:UntagResource",
+                "sns:Publish"
+            ],
+            "Resource": "arn:aws:sns:eu-west-1:084828586425:*"
+        },
+        {
+            "Sid": "AllowAccessToSpecificSNSActions",
+            "Effect": "Allow",
+            "Action": [
+                "sns:ConfirmSubscription",
+                "sns:RemovePermission",
+                "sns:AddPermission"
+            ],
+            "Resource": "arn:aws:sns:eu-west-1:084828586425:*"
+        }
+    ]
+}

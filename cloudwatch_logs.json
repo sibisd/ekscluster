@@ -1,0 +1,71 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListCloudWatchLogs",
+            "Effect": "Allow",
+            "Action": [
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:DescribeMetricFilters",
+                "logs:DescribeSubscriptionFilters",
+                "logs:DescribeResourcePolicies",
+                "logs:DescribeQueries"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowCreateAndManageLogGroups",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:DeleteLogGroup",
+                "logs:PutRetentionPolicy",
+                "logs:DeleteRetentionPolicy",
+                "logs:TagLogGroup",
+                "logs:UntagLogGroup"
+            ],
+            "Resource": "arn:aws:logs:eu-west-1:084828586425:log-group:*"
+        },
+        {
+            "Sid": "AllowCreateAndManageLogStreams",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:DeleteLogStream",
+                "logs:PutLogEvents",
+                "logs:GetLogEvents",
+                "logs:FilterLogEvents"
+            ],
+            "Resource": "arn:aws:logs:eu-west-1:084828586425:log-group:*:log-stream:*"
+        },
+        {
+            "Sid": "AllowManageSubscriptionFilters",
+            "Effect": "Allow",
+            "Action": [
+                "logs:PutSubscriptionFilter",
+                "logs:DeleteSubscriptionFilter"
+            ],
+            "Resource": "arn:aws:logs:eu-west-1:084828586425:log-group:*"
+        },
+        {
+            "Sid": "AllowManageMetricFilters",
+            "Effect": "Allow",
+            "Action": [
+                "logs:PutMetricFilter",
+                "logs:DeleteMetricFilter"
+            ],
+            "Resource": "arn:aws:logs:eu-west-1:084828586425:log-group:*"
+        },
+        {
+            "Sid": "AllowStartStopQueries",
+            "Effect": "Allow",
+            "Action": [
+                "logs:StartQuery",
+                "logs:StopQuery",
+                "logs:GetQueryResults"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

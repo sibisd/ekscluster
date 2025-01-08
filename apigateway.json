@@ -1,0 +1,29 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"apigateway:DELETE",
+				"apigateway:UpdateRestApiPolicy",
+				"apigateway:PUT",
+				"apigateway:PATCH",
+				"apigateway:POST",
+				"apigateway:GET"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"apigateway:DELETE",
+				"apigateway:UpdateRestApiPolicy",
+				"apigateway:PUT",
+				"apigateway:PATCH",
+				"apigateway:POST",
+				"apigateway:GET"
+			],
+			"Resource": "arn:aws:apigateway:eu-west-1:*:/restapis/*/stages/*"
+		}
+	]
+}

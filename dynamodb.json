@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "dynamodb:CreateTable",
+          "dynamodb:DeleteTable",
+          "dynamodb:UpdateTable",
+          "dynamodb:List*",
+          "dynamodb:Describe*"
+        ],
+        "Resource": "arn:aws:dynamodb:eu-west-1:084828586425:table/*"
+      }
+    ]
+  }
+  

@@ -1,0 +1,53 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:CreateRepository",
+                "ecr:DeleteRepository",
+                "ecr:DescribeRepositories",
+                "ecr:GetRepositoryPolicy",
+                "ecr:ListImages",
+                "ecr:DescribeImages",
+                "ecr:DeleteRepositoryPolicy"
+            ],
+            "Resource": "arn:aws:ecr:eu-west-1:084828586425:repository/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:BatchGetImage",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:PutImage",
+                "ecr:InitiateLayerUpload",
+                "ecr:UploadLayerPart",
+                "ecr:CompleteLayerUpload"
+            ],
+            "Resource": "arn:aws:ecr:eu-west-1:084828586425:repository/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:GetAuthorizationToken"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:GetDownloadUrlForLayer"
+            ],
+            "Resource": "arn:aws:ecr:eu-west-1:084828586425:repository/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:eu-west-1:084828586425:log-group:/aws/ecr/*"
+        }
+    ]
+}

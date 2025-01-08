@@ -1,0 +1,44 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowKeyCreationAndTagging",
+			"Effect": "Allow",
+			"Action": [
+				"kms:CreateKey",
+				"kms:TagResource",
+				"kms:PutKeyPolicy"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "AllowGeneralKeyManagement",
+			"Effect": "Allow",
+			"Action": [
+				"kms:Describe*",
+				"kms:List*"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "AllowSpecificKeyManagement",
+			"Effect": "Allow",
+			"Action": [
+				"kms:EnableKey",
+				"kms:DisableKey",
+				"kms:ScheduleKeyDeletion",
+				"kms:CancelKeyDeletion"
+			],
+			"Resource": "arn:aws:kms:eu-west-1:084828586425:key/*"
+		},
+		{
+			"Sid": "AllowEncryptDecrypt",
+			"Effect": "Allow",
+			"Action": [
+				"kms:Encrypt",
+				"kms:Decrypt"
+			],
+			"Resource": "arn:aws:kms:eu-west-1:084828586425:key/*"
+		}
+	]
+}
